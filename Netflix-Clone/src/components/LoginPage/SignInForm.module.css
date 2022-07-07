@@ -1,0 +1,102 @@
+.box {
+    background-color: rgba(0, 0, 0, .75);
+    height: 47rem;
+    width: 32rem;
+    margin: 6rem auto;
+}
+
+.login-form h1 {
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.form-content {
+    padding: 3rem 5rem;
+}
+
+.form-control input {
+    background: #333;
+    width: 90%;
+    padding: 1.1rem 1rem;
+    margin-bottom: 1.3rem;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    color: white;
+    font-size: 18px;
+}
+
+.btn {
+    width: 100%;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    background: #e50914;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    cursor: pointer;
+}
+
+.help {
+    margin-top: 1rem;
+    display: flex;
+    color: #b3b3b3;
+    font-weight: 500;
+}
+
+.help input {
+    width: auto;
+    color: #000;
+    background: #737373;
+}
+
+.help a {
+    margin-left: 9rem;
+    text-decoration: none;
+    color: #b3b3b3;
+}
+
+.help a:hover {
+    text-decoration: underline;
+}
+
+.sign-up {
+    margin-top: 5rem;
+    color: #8c8c8c;
+}
+
+.sign-up a {
+    text-decoration: none;
+}
+
+.sign-up a:hover, .sign-up p span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.sign-up span a {
+    color: #fff;
+}
+
+.sign-up p a, .sign-up p span {
+    color: #0080ff;
+}
+
+.error{
+    color: #e87c03;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    font-size: 14px;
+    padding-top: 0.2rem;
+}
+
+.invalid{
+    border-bottom: 3px solid #e87c03 !important;
+}
+
+.oops{
+    margin-top: 2rem !important;
+}

@@ -1,0 +1,18 @@
+.header{
+    position:absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    /* fill: #e50914; */
+}
+
+.logo{
+    margin-left: 3%;
+}
+
+.logo img{
+    height: 5rem;
+    width: 11.5rem;
+    margin-top: 0.7rem;
+        fill: #e50914;
+}
