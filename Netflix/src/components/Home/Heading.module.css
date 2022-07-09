@@ -1,0 +1,23 @@
+.heading{
+ color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+flex-direction: column;
+padding-right: 4rem;
+margin-top: 6rem;
+ 
+}
+.heading h1{
+    font-size: 4rem;
+    margin-bottom: 0%;
+}
+.heading h2{
+    font-size: 2rem;
+   
+}
+.heading h3{
+    font-size: 1.2rem;
+    font-weight:200 ;
+}

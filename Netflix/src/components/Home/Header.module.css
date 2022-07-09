@@ -1,0 +1,21 @@
+.title{
+    height: 5rem;
+    width: 15rem;
+    padding:2rem;
+}
+.button{
+    height: 3rem;
+    width: 7rem;
+    background-color: #e50914;
+    padding: 7px 20px;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    border-radius: 3px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+}
