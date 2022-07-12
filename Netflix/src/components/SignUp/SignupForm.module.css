@@ -2,13 +2,17 @@
    background-color: white; 
    height: 100vh;
    width: 100wh;
-   
+   display: flex;
+   flex-direction: column;
+   margin-top: 2rem;
+   align-items: center;
+ 
    
 }
 .name{
     display: flex;
     flex-direction: column;
-    margin-left: 40rem;
+   margin-left: 7rem;
     margin-top: 4rem;
    
 }
@@ -57,4 +61,23 @@
 }
 .invalid{
    border: 1px solid #b92d2b ;
+}
+.message{
+   background: #ffa00a;
+   color: azure;
+   height: 2rem;
+   width: 25rem;
+   margin-top: 0;
+  padding: 2rem;
+  font-size: 1.1rem;
+  border-radius:3px;
+  margin-left: 4rem;
+}
+.message a{
+   color: white;
+}
+.message span{
+   color: white;
+   height: 4rem;
+   width: 1rem;
 }

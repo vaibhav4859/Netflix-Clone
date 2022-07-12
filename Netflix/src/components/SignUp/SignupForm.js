@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { addUser, isValidUser } from '../../lib/api';
 import classes from './SignupForm.module.css';
 import { useFormik } from 'formik';
+
 const initialValues = {
     email: '',
     password: ''
@@ -9,14 +10,17 @@ const initialValues = {
 
 
 const SignupForm = () => {
-    const onSubmit = values => {
+    const [emailError, setEmailError] = useState(false);
+
+
+    const onSubmit = async values => {
         console.log(values);
-        addUser(values);
+        if (await isValidUser(values)) setEmailError(true);
+        else await addUser(values);
     }
     const validate = values => {
-      let error = isValidUser(values);
         let errors = {};
-        if (!values.email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)||error)
+        if (!values.email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email))
             errors.email = 'Please enter a valid email address.'
 
         if (!values.password || values.password.length < 6)
@@ -24,16 +28,20 @@ const SignupForm = () => {
         return errors;
 
     }
-
-
     const formik = useFormik({
         initialValues,
         onSubmit,
         validate
     });
     return (
-        <div className={classes.overall}>
 
+        <div className={classes.overall}>
+            {emailError && <div className={classes.message}>
+                <span>&#9888; </span>
+                <b >Looks like that account already exists.</b>
+                <a href='/login'> Sign into that account </a>
+                or try using a different email.
+            </div>}
             <div className={classes.name}>
                 <span>STEP
                     <b> 1 </b>
@@ -54,12 +62,9 @@ const SignupForm = () => {
                     <input type='password' placeholder='Add a password' name='password' className={formik.errors.password ? classes.invalid : ''}
                         {...formik.getFieldProps('password')}></input>
                     {formik.touched.password && formik.errors.password && <div className={classes.error}>{formik.errors.password}</div>}
-                    <button className={classes.button}>Next</button>
-
+                    <button className={classes.button} type='submit'>Next</button>
                 </form>
-
             </div>
-
         </div>
     )
 }

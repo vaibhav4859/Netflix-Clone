@@ -15,9 +15,14 @@ export async function addUser(userData) {
 
 export async function isValidUser(userData)
 {
+
     let errors=false;
-    const q=query(collection(db,'users'),where('email','==',userData.email));
-    const documents= await getDocs(q);
-    if(documents)errors=true;
+    console.log(errors,userData.email);
+    const q = query(collection(db, 'users'), where('email', '==', userData.email));
+    const documents = await getDocs(q);
+    console.log(documents);
+    if(documents)
+    errors=true; 
+    console.log(errors);
     return errors;
 }
