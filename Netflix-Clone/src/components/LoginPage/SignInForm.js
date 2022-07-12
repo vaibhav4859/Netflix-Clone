@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useFormik } from 'formik';
-import { collection, query, where, getDocs } from 'firebase/firestore';
-import { db } from '../../Firebase';
+import { isValidSignin, signInUser } from '../../lib/api';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './SignInForm.module.css';
 
@@ -10,17 +10,7 @@ const initialValues = {
     password: ''
 };
 
-const onSubmit = async values => {
-    // console.log(values);
-    const q = query(collection(db, 'users'), where('email', '==', values.email));
-
-    const documents = await getDocs(q);
-    documents.forEach((doc) => {
-        console.log(doc.id, " => ", doc.data());
-    });
-};
-
-const validate = values => {
+const validate = async values => {
     let errors = {};
 
     if (!values.email || (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)))
@@ -33,35 +23,52 @@ const validate = values => {
 };
 
 const SignInForm = () => {
+    const navigate = useNavigate();
+    const [emailError, setEmailError] = useState(false);
+    const [passwordError, setPasswordError] = useState(false);
+    const [learnMore, setLearnMore] = useState(false);
+    const learnMoreHandler = () => setLearnMore(true);
+
+    const onSubmit = async values => {
+        const validation = await isValidSignin(values); 
+        if (validation.email) setEmailError(true);
+        else if(validation.password) setPasswordError(true);
+        else {
+            await signInUser(values);
+            navigate('/home');
+        }
+    };
+
     const formik = useFormik({
         initialValues,
         onSubmit,
         validate
     });
 
-    const [learnMore, setLearnMore] = useState(false);
-    const learnMoreHandler = () => setLearnMore(true);
-
-    const signUpClasses = `${classes['sign-up']} ${(formik.touched.email && formik.errors.email) || (formik.touched.password && formik.errors.password) ? classes.oops : ''}`;
+    const signUpClasses = `${classes['sign-up']} ${(formik.touched.email && formik.errors.email) || (formik.touched.password && formik.errors.password)  ? classes.oops : ''} ${emailError || passwordError ? classes.errorState : ''}`;
 
     return (
         <div className={classes.box}>
             <div className={classes['form-content']}>
                 <div className={classes['login-form']}>
                     <h1>Sign In</h1>
+                    {(emailError || passwordError) && <div className={classes['error-box']}>
+                        {emailError && <p>Sorry, we can't find an account with this email address. Please try again or <a href='/'>create a new account</a>.</p>}
+                        {passwordError && <p><b>Incorrect password.</b> Please try again or you can <a href='/LoginHelp'>reset your password.</a></p>}
+                    </div>}
                     <form className={classes['form-control']} onSubmit={formik.handleSubmit}>
 
-                        <input type='email' placeholder='Email' name='email' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} className={(formik.touched.email && formik.errors.email) ? classes.invalid : ''} />
+                        <input type='email' placeholder='Email'  name='email' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} className={(formik.touched.email && formik.errors.email) || emailError ? classes.invalid : ''} />
                         {formik.touched.email && formik.errors.email ? <div className={classes.error}>{formik.errors.email}</div> : null}
 
-                        <input type='password' placeholder='Password' name='password' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password} className={formik.touched.password && formik.errors.password ? classes.invalid : ''} />
+                        <input type='password' placeholder='Password' name='password' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password} className={(formik.touched.password && formik.errors.password) || passwordError ? classes.invalid : ''} />
                         {formik.touched.password && formik.errors.password ? <div className={classes.error}>{formik.errors.password}</div> : null}
 
-                        <button type='submit' className={classes.btn}>Sign In</button>
+                        <button type='submit' className={`${classes.btn} ${emailError || passwordError ? classes['btn-error'] : ''}`}>Sign In</button>
                         <div className={classes.help}>
-                            <input type='checkbox' id='rememberMe' checked />
+                            <input type='checkbox' id='rememberMe' defaultChecked={true} />
                             <label htmlFor='rememberMe'>Remember Me</label>
-                            <a href='/'>Need help?</a>
+                            <a href='/LoginHelp'>Need help?</a>
                         </div>
                     </form>
 

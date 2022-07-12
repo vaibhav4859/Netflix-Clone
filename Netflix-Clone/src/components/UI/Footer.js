@@ -1,8 +1,8 @@
 import classes from './Footer.module.css';
 
-function Footer() {
+function Footer(props) {
     return (
-        <div className={classes.footer}>
+        <div className={`${classes.footer} ${props.signup ? classes.signup : ''}`} >
             <div className={classes.content}>
                 <p className={classes.top}>Questions? Call <a href='tel:000-800-040-1843'>000-800-040-1843</a></p>
                 <div className={classes.line1}>
@@ -17,7 +17,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Footer

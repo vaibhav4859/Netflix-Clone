@@ -1,0 +1,39 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+}
+
+.logo {
+    height: 2.5rem;
+    width: 11.5rem;
+    margin-left: 3rem;
+    cursor: pointer;
+}
+
+.sign-in {
+    width: 4rem;
+    height: 1.4rem;
+    text-align: center;
+    text-decoration: none;
+    background-color: #e50914;
+    padding: 0.4rem 1.05rem;
+    font-size: 1.1rem;
+    color: white;
+    cursor: pointer;
+    margin-right: 4rem;
+    border-radius: 4px;
+}
+
+.forgot {
+    color: #E50914;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 0.4rem;
+    margin-right: 2.8rem;
+}
+
+.forgot:hover{
+    text-decoration: underline;
+}

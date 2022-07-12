@@ -1,13 +1,14 @@
 .box {
     background-color: rgba(0, 0, 0, .75);
-    height: 47rem;
+    height: auto;
     width: 32rem;
-    margin: 6rem auto;
+    margin: 1.7rem auto;
+    margin-bottom: 6.9rem;
 }
 
 .login-form h1 {
     color: white;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     margin-bottom: 2rem;
 }
@@ -72,7 +73,8 @@
     text-decoration: none;
 }
 
-.sign-up a:hover, .sign-up p span:hover {
+.sign-up a:hover,
+.sign-up p span:hover {
     text-decoration: underline;
     cursor: pointer;
 }
@@ -81,11 +83,12 @@
     color: #fff;
 }
 
-.sign-up p a, .sign-up p span {
+.sign-up p a,
+.sign-up p span {
     color: #0080ff;
 }
 
-.error{
+.error {
     color: #e87c03;
     margin-top: -1rem;
     margin-bottom: 1rem;
@@ -93,10 +96,29 @@
     padding-top: 0.2rem;
 }
 
-.invalid{
+.invalid {
     border-bottom: 3px solid #e87c03 !important;
 }
 
-.oops{
+.oops {
     margin-top: 2rem !important;
+}
+
+.errorState{
+    margin-top: 0 !important;
+}
+
+.error-box {
+    background: #e87c03;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.error-box p {
+    color: white;
+    padding: 0.8rem 1.4rem;
+}
+
+.error-box p a{
+    color: white;
 }

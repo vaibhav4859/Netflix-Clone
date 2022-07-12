@@ -1,12 +1,17 @@
 .footer {
     background: rgba(0, 0, 0, .75);
-    width: 100%;
-    color: #757575;
+    color: #737373;
     margin: 0 auto;
+    padding-left: 12rem;
+}
+
+.signup {
+    background-color: #f3f3f3 !important;
+    padding-top: 0.5rem;
+    padding-left: 5rem !important;
 }
 
 .content {
-    padding-left: 12rem;
     padding-bottom: 2.7rem;
 }
 
