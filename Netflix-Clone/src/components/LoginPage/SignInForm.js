@@ -16,8 +16,8 @@ const validate = async values => {
     if (!values.email || (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)))
         errors.email = 'Please enter a valid email address.';
 
-    if (!values.password)
-        errors.password = 'Your password must contain between 4 and 60 characters.';
+    if (!values.password || values.password.lenght < 6)
+        errors.password = 'Your password must contain between 6 and 60 characters.';
 
     return errors;
 };
@@ -58,10 +58,10 @@ const SignInForm = () => {
                     </div>}
                     <form className={classes['form-control']} onSubmit={formik.handleSubmit}>
 
-                        <input type='email' placeholder='Email'  name='email' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.email} className={(formik.touched.email && formik.errors.email) || emailError ? classes.invalid : ''} />
+                        <input type='email' placeholder='Email'  name='email' {...formik.getFieldProps('email')} className={(formik.touched.email && formik.errors.email) || emailError ? classes.invalid : ''} />
                         {formik.touched.email && formik.errors.email ? <div className={classes.error}>{formik.errors.email}</div> : null}
 
-                        <input type='password' placeholder='Password' name='password' onChange={formik.handleChange} onBlur={formik.handleBlur} value={formik.values.password} className={(formik.touched.password && formik.errors.password) || passwordError ? classes.invalid : ''} />
+                        <input type='password' placeholder='Password' name='password' {...formik.getFieldProps('password')} className={(formik.touched.password && formik.errors.password) || passwordError ? classes.invalid : ''} />
                         {formik.touched.password && formik.errors.password ? <div className={classes.error}>{formik.errors.password}</div> : null}
 
                         <button type='submit' className={`${classes.btn} ${emailError || passwordError ? classes['btn-error'] : ''}`}>Sign In</button>

@@ -25,7 +25,7 @@ const InputField = () => {
     const onSubmit = values => {
         console.log(values);
         emailCtx.email = values.email;
-        navigate('/signup');
+        navigate('/signup/registration');
     }
 
     const formik = useFormik({

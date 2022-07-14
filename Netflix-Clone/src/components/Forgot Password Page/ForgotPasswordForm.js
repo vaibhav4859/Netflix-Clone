@@ -1,16 +1,12 @@
 import { useFormik } from 'formik';
 import { useState } from 'react';
-import { updatePassword } from '../../lib/api';
+import { useNavigate } from 'react-router-dom';
+import { isValidUser, updatePassword } from '../../lib/api';
 import classes from './ForgotPasswordForm.module.css';
 
 const initialValues = {
     email: '',
     password: ''
-}
-
-const onSubmit = async values => {
-    await updatePassword(values);
-    console.log(values);
 }
 
 const validate = values => {
@@ -19,15 +15,25 @@ const validate = values => {
     if (!values.email || !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email))
         errors.email = 'Please enter a valid email address.';
 
-    if (!values.password || values.password.length < 4)
-        errors.password = 'Your password must contain between 4 and 60 characters.';
+    if (!values.password || values.password.length < 6)
+        errors.password = 'Your password must contain between 6 and 60 characters.';
 
     return errors;
 }
 
 const ForgotPasswordForm = () => {
+    const navigate = useNavigate();
+    const [emailError, setEmailError] = useState(false);
     const [learnMore, setLearnMore] = useState(true);
     const clickedHandler = () => setLearnMore(false);
+
+    const onSubmit = async values => {
+        if (await isValidUser(values)) {
+            setEmailError(false);
+            await updatePassword(values);
+            navigate('/login');
+        } else setEmailError(true);
+    }
 
     const formik = useFormik({
         initialValues,
@@ -39,6 +45,10 @@ const ForgotPasswordForm = () => {
         <div className={classes.container}>
             <div className={classes.box}>
                 <h1>Forgot Email/Password</h1>
+                {emailError && <div className={classes['email-error']}>
+                    <span>&#10006;</span>
+                    <p>No account found for this email address.</p>
+                </div>}
                 <p>Reset Your Password :</p>
                 <form onSubmit={formik.handleSubmit}>
                     <input name='email' {...formik.getFieldProps('email')} className={formik.touched.email && formik.errors.email ? classes.errorBorder : ''} placeholder='name@example.com' />

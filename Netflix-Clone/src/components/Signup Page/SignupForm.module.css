@@ -1,4 +1,4 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,7 +13,7 @@
     margin-bottom: 0;
 }
 
-.name{
+.name {
     margin-left: -0.8rem;
 }
 
@@ -39,6 +39,7 @@
     margin-top: 1rem;
     margin-bottom: 12rem;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .form {
@@ -54,4 +55,31 @@
 
 .invalid {
     border: 1px solid #b92d2b;
+}
+
+.message {
+    display: flex;
+    background: #ffa00a;
+    color: azure;
+    height: 1.5rem;
+    width: 27rem;
+    padding: 1.5rem;
+    padding-bottom: 2.5rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+}
+
+.message span {
+    font-size: 2rem;
+    padding-right: 1rem;
+}
+
+.text {
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+}
+
+.text a {
+    color: white;
 }

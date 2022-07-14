@@ -5,11 +5,10 @@ import classes from './SignupHeader.module.css';
 const SignupHeader = (props) => {
     const navigate = useNavigate();
     const clickHandler = () => navigate('/');
-
     return (
         <div className={classes.page}>
             <img onClick={clickHandler} alt='error' src={logo} />
-            <a href='/login'>{props.signout ? 'Sign Out' : 'Sign In'}</a>
+            <a href={props.signout ? '/logout' : '/login'}>{props.signout ? 'Sign Out' : 'Sign In'}</a>
         </div>
     );
 };

@@ -1,5 +1,5 @@
 .bg-image {
-    height: 162%;
+    height: 107%;
     min-height: 100vh;
     overflow: hidden;
     position: absolute;
@@ -9,4 +9,5 @@
 
 .opacity {
     opacity: .5;
+    height: 162% !important;
 }

@@ -1,19 +1,14 @@
-import { useState } from "react";
+import { Outlet, useLocation } from 'react-router-dom'
 
 import SignupHeader from "../components/Signup Page/SignupHeader";
-import TxtContainer from '../components/Signup Page/TxtContainer';
-import SignupForm from "../components/Signup Page/SignupForm";
 import Footer from '../components/UI/Footer';
 
 const Signup = () => {
-    const [isButtonClicked, setIsButtonClicked] = useState(false);
-    const buttonClickedHandler = () => setIsButtonClicked(true);
-
+    const location = useLocation();
     return (
         <div style={{ backgroundColor: 'white' }} >
-            <SignupHeader signup={true} />
-            {!isButtonClicked && <TxtContainer onClicked={buttonClickedHandler} />}
-            {isButtonClicked && <SignupForm />}
+            <SignupHeader signout={location.pathname === '/signup' ? true : false} />
+            <Outlet />
             <Footer signup={true} />
         </div>
     );
