@@ -1,0 +1,50 @@
+.footer {
+    background: rgba(0, 0, 0, .75);
+    color: #737373;
+    margin: 0 auto;
+    padding-left: 12rem;
+}
+
+.signup {
+    background-color: #f3f3f3 !important;
+    padding-top: 0.5rem;
+    padding-left: 5rem !important;
+}
+
+.content {
+    padding-bottom: 2.7rem;
+   
+}
+
+.top {
+    padding: 1rem 0;
+    font-size: 1.1rem;
+}
+
+.top a{
+    color: #757575;
+    text-decoration: none;
+}
+
+.footer .line1 a,
+.footer .line2 a {
+    color: #757575;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.footer .line1 a {
+    padding-right: 15rem;
+}
+
+.footer .line2 a {
+    padding-right: 8.2rem;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.line1 {
+    padding-bottom: 1rem;
+}

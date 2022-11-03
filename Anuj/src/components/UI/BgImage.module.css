@@ -1,0 +1,14 @@
+.bg-image {
+    height: 107%;
+    min-height: 100vh;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    
+}
+
+.opacity {
+    opacity: .5;
+    height: 162% !important;
+}
