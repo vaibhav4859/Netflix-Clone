@@ -1,0 +1,54 @@
+.contain {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+}
+
+.box span {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.box h1 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.box p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-left: 0 !important;
+}
+
+.button {
+    width: 24rem;
+    height: 4.5rem;
+    background-color: #f6121d;
+    color: white;
+    border-color: white;
+    border-radius: 5px;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.tick {
+    font-size: 1.4rem !important;
+    align-self: flex-start;
+    color: #e50914;
+    margin-right: 0.4rem;
+}
+
+.step {
+    text-align: center;
+    font-size: 1rem !important;
+}
+
+.newLine {
+    font-size: 1.3rem !important;
+    padding-left: 2rem;
+}
