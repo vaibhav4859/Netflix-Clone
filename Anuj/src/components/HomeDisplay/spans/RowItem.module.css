@@ -1,0 +1,129 @@
+.inner {
+  /* border: 2px solid red; */
+  height: 9.8rem;
+  width: 14rem;
+  margin: 0px 3px;
+  border-radius: 0.2vw;
+  transition: transform 450ms;
+}
+
+.inner img {
+  height: 9.8rem;
+  width: 14rem;
+}
+.svg {
+  border: 2px solid brown;
+  margin-top: -7rem;
+  transform: translateX(152%);
+}
+
+.progress {
+  /* border: 2px solid white; */
+  width: 8rem;
+  margin-left: 3rem;
+  background-color: hsla(0, 0%, 100%, 0.3);
+  display: block;
+  flex-grow: 1;
+  height: 5px;
+}
+.container {
+  display: none;
+  margin-top: 1rem;
+  /* border: 2px solid violet; */
+  height: 48%;
+  /* overflow: hidden; */
+}
+.container svg {
+  color: white;
+  margin: 0 auto;
+  /* border: 2px solid brown; */
+  margin-top: -32rem;
+  /* transform: translateX(152%); */
+  transform: translate(5.8rem, -3rem);
+  margin: 0 15%;
+}
+
+.content {
+  color: white;
+  border: 2px solid green;
+  transform: translate(-508%, 185%);
+  /* width: 14rem; */
+  /* width: 50px; */
+  color: #46d369;
+}
+.container svg:hover {
+  cursor: pointer;
+}
+.inner:hover {
+  transform: translateY(-2rem);
+  height: 18rem;
+  width: 25rem;
+  /* border: 2px solid green; */
+  background-color: black;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.inner:hover .image{
+  width: 100%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.inner:hover .container {
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.span {
+  background-color: #e50914;
+  height: 5px;
+  width: 3rem;
+}
+.span2 {
+  /* border: 2px solid red; */
+  height: 2%;
+  /* transform: translate(-142%,24%); */
+  /* margin-left: 1rem; */
+  transform: translateX(-3rem);
+  width: 24%;
+  height: 12%;
+  color: aqua;
+  margin: 4%;
+}
+.span3 {
+  border: 1px solid hsla(0, 0%, 100%, 0.4);
+  height: 2%;
+  /* transform: translate(-142%,24%); */
+  /* margin-left: 1rem; */
+  transform: translateX(-3rem);
+  width: 24%;
+  height: 12%;
+  color: white;
+  margin: 4%;
+}
+.span4 {
+  /* border: 1px solid hsla(0, 0%, 100%, 0.4); */
+  height: 2%;
+  /* transform: translate(-142%,24%); */
+  /* margin-left: 1rem; */
+  transform: translateX(-3rem);
+  width: 24%;
+  height: 12%;
+  color: white;
+  margin: 4%;
+}
+.f {
+  border: 1px solid hsla(0, 0%, 100%, 0.4);
+  height: 2%;
+  /* transform: translate(-142%,24%); */
+  /* margin-left: 1rem; */
+  transform: translateX(27rem -19rem);
+  width: 23%;
+  height: 12%;
+  color: white;
+  margin: 4%;
+  transform: translate(-16rem, 3rem);
+  border: 2px solid green;
+}

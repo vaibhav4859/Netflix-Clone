@@ -1,12 +1,83 @@
-.outer {
+.image {
+  height: 108vh;
+  width: 100vw;
 }
-.img {
-  height: 162%;
-  min-height: 100vh;
-  overflow: hidden;
-  position: absolute;
-  width: 110%;
-  z-index: -1;
-  background-position: 50%;
+.container {
   /* border: 2px solid red; */
+  transform: translateY(-37rem);
+  width: 38rem;
+  height: 31rem;
+  margin-left: 2rem;
+}
+
+.text {
+  color: #fff;
+  font-size: 1.6vw;
+  margin: 1vw 0;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+  transition: color 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-weight: 500;
+  font-weight: bold;
+}
+.font {
+  color: #fff;
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 0.1vw;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 45%);
+  width: 100%;
+}
+.buttons {
+  /* border: 2px solid green; */
+  margin-top: 2rem;
+  height: 4rem;
+  width: 20rem;
+}
+.btn {
+  height: 3rem;
+  width: 8rem;
+  border-radius: 5px;
+  border: none;
+  
+}
+.btn:hover{
+  cursor: pointer;
+}
+.btn span {
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 2.4rem;
+}
+.btn svg {
+  transform: translate(-34%, 24%);
+  margin: le;
+}
+.btn2 {
+  height: 3rem;
+  width: 9.5rem;
+  border-radius: 5px;
+  background-color: rgba(109, 109, 110, 0.7);
+  color: white;
+  border: none;
+  transform: translate(9%, 2%);
+  
+ 
+}
+.btn2 span {
+  font-size: 1.2rem;
+
+  line-height: 2.4rem;
+  font-weight: bold;
+  
+}
+.btn2 svg {
+  transform: translate(-19%, 23%);
+}
+.outer{
+  height: 140rem;
+  width: 100%;
+  background: #141414;
+  /* border: 2px solid red; */
+  
 }
