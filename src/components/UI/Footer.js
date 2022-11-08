@@ -1,23 +1,64 @@
-import classes from './Footer.module.css';
+import React from "react";
+import classes from "./Footer.module.css";
 
-function Footer(props) {
-    return (
-        <div className={`${classes.footer} ${props.signup ? classes.signup : ''}`} >
-            <div className={classes.content}>
-                <p className={classes.top}>Questions? Call <a href='tel:000-800-040-1843'>000-800-040-1843</a></p>
-                <div className={classes.line1}>
-                    <a href='https://help.netflix.com/en/node/412' target='_blank' rel="noopener noreferrer">FAQ</a>
-                    <a href='https://help.netflix.com/en/' target='_blank' rel="noopener noreferrer">Help Center</a>
-                    <a href='https://help.netflix.com/legal/termsofuse' target='_blank' rel="noopener noreferrer">Terms of Use</a>
-                    <a href='https://help.netflix.com/legal/privacy' target='_blank' rel="noopener noreferrer">Privacy</a>
-                </div>
-                <div className={classes.line2}>
-                    <a href='https://help.netflix.com/legal/privacy' target='_blank' rel="noopener noreferrer">Cookie Preferences</a>
-                    <a href='https://help.netflix.com/legal/corpinfo' target='_blank' rel="noopener noreferrer">Corporate Information</a>
-                </div>
-            </div>
-        </div>
-    );
-};
+const Footer = props => {
+  const outerClasses = `${classes.outer} ${props.signup ? classes.bg : ''}`
+  return (
+    <div className={outerClasses}>
+      <div className={classes.inner}>
+        <p className={classes.para}>Questions? Call{" "}
+          <a href="tel:000-800-040-1843" className={classes.anchor}>000-800-040-1843</a>
+        </p>
+        <ul className={classes.list}>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>FAQ</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Help Centre</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Account</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Media Centre</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Investor Relations</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Jobs</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Ways to Watch</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Terms of Use</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Privacy</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Cookie Preferences</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Corporate Information</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Contact Us</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Speed Test</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Legal Notices</a>
+          </li>
+          <li className={classes.item}>
+            <a href="/" className={classes.anchor}>Only on Netflix</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
+}
 
-export default Footer
+export default Footer;

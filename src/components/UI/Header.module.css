@@ -18,11 +18,13 @@
     text-decoration: none;
     background-color: #e50914;
     padding: 0.4rem 1.05rem;
+    padding-top: 0.5rem;
     font-size: 1.1rem;
     color: white;
     cursor: pointer;
     margin-right: 4rem;
     border-radius: 4px;
+
 }
 
 .forgot {
@@ -34,6 +36,6 @@
     margin-right: 2.8rem;
 }
 
-.forgot:hover{
+.forgot:hover {
     text-decoration: underline;
 }

@@ -1,0 +1,89 @@
+.outer {
+    background-color: black;
+    height: 100vh;
+    color: white;
+    width: 100%;
+    display: flex;
+    border-bottom: 8px solid #222;
+    height: 30rem;
+}
+
+.bar {
+    width: 100%;
+    display: flex;
+}
+
+.inner {
+    margin: 98px 77px;
+    margin-right: 0;
+}
+
+.inner img {
+    width: 32rem;
+    margin: -4.5rem -1.8rem;
+}
+
+.stranger {
+    display: flex;
+    border: 2px solid hsla(0, 0%, 100%, .25);
+    height: 5.8rem;
+    width: 21rem;
+    margin-top: 18rem;
+    margin-left: 20rem;
+    transform: translateX(-45rem);
+    background: black;
+    box-shadow: 0 0 2em 0 #000;
+    border-radius: 0.75em;
+}
+
+.stranger img {
+    height: 4.5rem;
+    margin-top: 0.5rem;
+    margin-left: 0.8rem;
+}
+
+.download {
+    color: #0071eb;
+    font-size: .75em;
+    font-weight: 400;
+}
+
+.things {
+    color: #fff;
+    font-weight: 600;
+}
+
+.content {
+    padding: 0.4rem;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    width: 72%;
+}
+
+.animation {
+    height: 3rem;
+    width: 3rem;
+    margin: -2.5rem 11.5rem;
+    outline: 2px solid #000;
+    background: url(https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/download-icon.gif) center center no-repeat;
+    background-size: 100%;
+}
+
+.side {
+    width: 30rem;
+    transform: translateX(-32rem);
+    margin-top: 6rem;
+}
+
+.side h1 {
+    font-size: 3.1rem;
+    width: 35rem;
+}
+
+.side h2 {
+    font-size: 1.6rem;
+    width: 35rem;
+    margin-left: 0;
+    margin-top: 0;
+    font-weight: 100;
+}

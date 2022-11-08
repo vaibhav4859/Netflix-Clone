@@ -1,0 +1,14 @@
+.scroll {
+    transform: translate(17.5rem, -0.7rem);
+    width: 2rem;
+}
+
+.clicked {
+    transform: translate(1.3rem, -0.7rem);
+    width: 2rem;
+}
+
+.scroll svg,
+.clicked svg {
+    color: white
+}

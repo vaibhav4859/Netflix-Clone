@@ -3,7 +3,7 @@ import BgImage from '../components/UI/BgImage';
 import Header from '../components/UI/Header';
 import ForgotPasswordForm from '../components/Forgot Password Page/ForgotPasswordForm';
 import Signout from '../components/SignOut Page/Signout';
-import Footer from '../components/UI/Footer';
+import Box6 from '../components/UI/Footer';
 
 const LoginHelp = (props) => {
   return (
@@ -12,7 +12,7 @@ const LoginHelp = (props) => {
       <Header forgotHeader={true} />
       {props.signout && <Signout />}
       {!props.signout && <ForgotPasswordForm />}
-      <Footer />
+      <Box6 />
     </Fragment>
   );
 };

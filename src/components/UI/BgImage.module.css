@@ -9,5 +9,9 @@
 
 .opacity {
     opacity: .5;
-    height: 162% !important;
+    height: 111% !important;
+}
+
+.bg {
+    height: 145% !important;
 }

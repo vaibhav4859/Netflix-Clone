@@ -30,9 +30,9 @@ const SignInForm = () => {
     const learnMoreHandler = () => setLearnMore(true);
 
     const onSubmit = async values => {
-        const validation = await isValidSignin(values); 
+        const validation = await isValidSignin(values);
         if (validation.email) setEmailError(true);
-        else if(validation.password) setPasswordError(true);
+        else if (validation.password) setPasswordError(true);
         else {
             await signInUser(values);
             navigate('/home');
@@ -45,7 +45,7 @@ const SignInForm = () => {
         validate
     });
 
-    const signUpClasses = `${classes['sign-up']} ${(formik.touched.email && formik.errors.email) || (formik.touched.password && formik.errors.password)  ? classes.oops : ''} ${emailError || passwordError ? classes.errorState : ''}`;
+    const signUpClasses = `${classes['sign-up']} ${(formik.touched.email && formik.errors.email) || (formik.touched.password && formik.errors.password) ? classes.oops : ''} ${emailError || passwordError ? classes.errorState : ''}`;
 
     return (
         <div className={classes.box}>
@@ -58,7 +58,7 @@ const SignInForm = () => {
                     </div>}
                     <form className={classes['form-control']} onSubmit={formik.handleSubmit}>
 
-                        <input type='email' placeholder='Email'  name='email' {...formik.getFieldProps('email')} className={(formik.touched.email && formik.errors.email) || emailError ? classes.invalid : ''} />
+                        <input type='email' placeholder='Email' name='email' {...formik.getFieldProps('email')} className={(formik.touched.email && formik.errors.email) || emailError ? classes.invalid : ''} />
                         {formik.touched.email && formik.errors.email ? <div className={classes.error}>{formik.errors.email}</div> : null}
 
                         <input type='password' placeholder='Password' name='password' {...formik.getFieldProps('password')} className={(formik.touched.password && formik.errors.password) || passwordError ? classes.invalid : ''} />

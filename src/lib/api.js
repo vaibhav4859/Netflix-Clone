@@ -1,6 +1,5 @@
 import { collection, addDoc, where, getDocs, query, updateDoc, doc } from 'firebase/firestore';
-import { db } from '../Firebase';
-import { auth } from '../Firebase';
+import { auth, db, storage } from '../Firebase';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export async function addUser(userData) {
@@ -57,4 +56,23 @@ export async function updatePassword(userData) {
     });
 
     return null;
+}
+
+export async function getImages(name) {
+    const urls = [];
+    await storage.ref().child(`/${name}`).listAll()
+        .then(res => {
+            res.items.forEach((item) => {
+                item.getDownloadURL().then(url => {
+                    urls.push(url);
+                }).catch(error => {
+                    // Handle any errors
+                    console.log(error);
+                });
+            })
+        }).catch(err => {
+            console.log(err);
+        })
+    // console.log(urls);
+    return [...urls];
 }
